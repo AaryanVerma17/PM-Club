@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Club NSUT | Project Management Society</title>
+    <meta name="description" content="Official website of PM Club NSUT - Empowering future project leaders through hands-on experience, industry exposure, and professional development">
+    
+    <!-- Performance & SEO -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Inline Critical CSS -->
+    <style>
+        /* Critical above-the-fold styles */
+        .navbar { 
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.3s forwards;
+        }
+        @keyframes fadeIn { to { opacity: 1; } }
+        
+        .hero { 
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Reduce layout shift */
+        img { aspect-ratio: attr(width) / attr(height); }
+        .activity-item::before { content: ''; }
+        
+        /* Loading state */
+        body:not(.loaded) .lazy-load { opacity: 0; transform: translateY(20px); }
+        body.loaded .lazy-load { 
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+    </style>
+    
+    <!-- Main Styles (Loaded non-blocking) -->
+    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="PM Club NSUT | Project Management Society">
+    <meta property="og:description" content="Empowering future project leaders through hands-on experience">
+    <meta property="og:image" content="https://pmclubnsut.in/images/og-image.jpg">
+    <meta property="og:url" content="https://pmclubnsut.in">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PM Club NSUT">
+    <meta name="twitter:description" content="Project Management Society of NSUT">
+</head>
+<body>
+    <!-- Skip to Main Content for Accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="index.html" class="logo" aria-label="PM Club NSUT Home">
+                    <div class="logo-visual">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                            <text x="20" y="24" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold">PM</text>
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2563eb"/>
+                                    <stop offset="100%" stop-color="#0d9488"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">PM Club</span>
+                        <span class="logo-subtitle">NSUT</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-menu" role="menu">
+                    <a href="index.html" class="nav-link active" role="menuitem" aria-current="page">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="about.html" class="nav-link" role="menuitem">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                    <a href="events.html" class="nav-link" role="menuitem">
+                        <i class="fas fa-calendar-alt"></i> Events
+                    </a>
+                    <a href="contact.html" class="nav-link" role="menuitem">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                    <a href="#apply" class="btn-primary nav-btn apply-now" 
+                       role="button" aria-label="Apply to join PM Club">
+                        Apply Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+                <div class="mobile-menu-container">
+                    <a href="index.html" class="mobile-link active" aria-current="page">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="about.html" class="mobile-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                    <a href="events.html" class="mobile-link">
+                        <i class="fas fa-calendar-alt"></i> Events
+                    </a>
+                    <a href="contact.html" class="mobile-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                    <a href="#apply" class="btn-primary mobile-btn apply-now" role="button">
+                        Apply Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-content" data-animate="fadeInUp">
+                    <h1 id="hero-title" class="hero-title" data-text="PM Club NSUT">
+                        <span class="title-line">PM Club</span>
+                        <span class="title-line accent">NSUT</span>
+                    </h1>
+                    
+                    <div class="hero-tagline">
+                        <p class="hero-subtitle" data-animate="fadeInUp" data-delay="0.2">
+                            Empowering future project leaders through 
+                            <span class="highlight">hands-on experience</span>, 
+                            <span class="highlight">industry exposure</span>, and 
+                            <span class="highlight">professional development</span>
+                        </p>
+                    </div>
+                    
+                    <div class="hero-stats" data-animate="fadeInUp" data-delay="0.4">
+                        <div class="stat">
+                            <span class="stat-number" data-count="500">0</span>
+                            <span class="stat-label">Active Members</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Events Yearly</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="100">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions" data-animate="fadeInUp" data-delay="0.6">
+                        <a href="#apply" class="btn-hero btn-hero-primary apply-now">
+                            <span class="btn-text">Join the Club</span>
+                            <span class="btn-icon"><i class="fas fa-rocket"></i></span>
+                        </a>
+                        <a href="#what-we-do" class="btn-hero btn-hero-outline scroll-to">
+                            <span class="btn-text">Explore Activities</span>
+                            <span class="btn-icon"><i class="fas fa-arrow-down"></i></span>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-scroll" data-animate="fadeInUp" data-delay="0.8">
+                        <button class="scroll-indicator" aria-label="Scroll down">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Animated Background Elements -->
+            <div class="hero-bg-elements">
+                <div class="bg-circle circle-1"></div>
+                <div class="bg-circle circle-2"></div>
+                <div class="bg-circle circle-3"></div>
+                <div class="bg-circle circle-4"></div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section id="what-we-do" class="what-we-do" aria-labelledby="what-we-do-title">
+            <div class="container">
+                <div class="section-header" data-animate="fadeInUp">
+                    <h2 id="what-we-do-title" class="section-title">
+                        <span class="section-title-main">What We Do</span>
+                        <span class="section-title-line"></span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Our key activities and initiatives designed to build your project management skills
+                    </p>
+                </div>
+                
+                <div class="activities-container">
+                    <div class="activities-grid" data-animate="stagger">
+                        <!-- Workshop -->
+                        <div class="activity-item" data-animate-item data-activity="workshop">
+                            <div class="activity-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h3 class="activity-title">Workshops</h3>
+                                <p class="activity-description">
+                                    Interactive sessions on project management tools, methodologies, and best practices.
+                                </p>
+                                <div class="activity-details">
+                                    <span class="activity-detail">
+                                        <i class="fas fa-clock"></i> Weekly Sessions
+                                    </span>
+                                    <span class="activity-detail">
+                                        <i class="fas fa-users"></i> Expert Led
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="activity-expand" aria-label="Learn more about Workshops">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Industry Connect -->
+                        <div class="activity-item" data-animate-item data-activity="industry">
+                            <div class="activity-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h3 class="activity-title">Industry Connect</h3>
+                                <p class="activity-description">
+                                    Guest lectures, company visits, and networking events with industry professionals.
+                                </p>
+                                <div class="activity-details">
+                                    <span class="activity-detail">
+                                        <i class="fas fa-calendar"></i> Monthly Events
+                                    </span>
+                                    <span class="activity-detail">
+                                        <i class="fas fa-handshake"></i> Networking
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="activity-expand" aria-label="Learn more about Industry Connect">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Projects -->
+                        <div class="activity-item" data-animate-item data-activity="projects">
+                            <div class="activity-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h3 class="activity-title">Projects</h3>
+                                <p class="activity-description">
+                                    Hands-on projects to apply project management concepts to real-world scenarios.
+                                </p>
+                                <div class="activity-details">
+                                    <span class="activity-detail">
+                                        <i class="fas fa-tasks"></i> Real Projects
+                                    </span>
+                                    <span class="activity-detail">
+                                        <i class="fas fa-trophy"></i> Competitions
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="activity-expand" aria-label="Learn more about Projects">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Community -->
+                        <div class="activity-item" data-animate-item data-activity="community">
+                            <div class="activity-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h3 class="activity-title">Community</h3>
+                                <p class="activity-description">
+                                    Build connections with like-minded students and alumni in the field.
+                                </p>
+                                <div class="activity-details">
+                                    <span class="activity-detail">
+                                        <i class="fas fa-comments"></i> Peer Learning
+                                    </span>
+                                    <span class="activity-detail">
+                                        <i class="fas fa-graduation-cap"></i> Alumni Network
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="activity-expand" aria-label="Learn more about Community">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity Details Modal -->
+                    <div class="activity-modal" id="activityModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+                        <div class="modal-content">
+                            <button class="modal-close" aria-label="Close modal">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <div class="modal-body">
+                                <h3 id="modalTitle" class="modal-title"></h3>
+                                <div class="modal-description"></div>
+                                <div class="modal-features"></div>
+                            </div>
+                        </div>
+                        <div class="modal-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Preview -->
+        <section class="about-preview" aria-labelledby="about-preview-title">
+            <div class="container">
+                <div class="preview-grid">
+                    <div class="preview-content" data-animate="fadeInLeft">
+                        <h2 id="about-preview-title" class="preview-title">
+                            Who We Are
+                            <span class="title-underline"></span>
+                        </h2>
+                        <p class="preview-text">
+                            PM Club NSUT is the official Project Management Society of Netaji Subhas University of Technology. 
+                            We bridge the gap between academic learning and real-world project management.
+                        </p>
+                        <div class="preview-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Industry-Recognized Workshops</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Exclusive Internship Opportunities</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Mentorship from Professionals</span>
+                            </div>
+                        </div>
+                        <a href="about.html" class="btn-primary preview-btn">
+                            Learn More About Us
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="preview-visual" data-animate="fadeInRight">
+                        <div class="visual-container">
+                            <div class="visual-card card-1">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Skill Development</span>
+                            </div>
+                            <div class="visual-card card-2">
+                                <i class="fas fa-network-wired"></i>
+                                <span>Networking</span>
+                            </div>
+                            <div class="visual-card card-3">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Career Growth</span>
+                            </div>
+                            <div class="visual-card card-4">
+                                <i class="fas fa-hands-helping"></i>
+                                <span>Community</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Preview -->
+        <section class="events-preview" aria-labelledby="events-preview-title">
+            <div class="container">
+                <div class="section-header" data-animate="fadeInUp">
+                    <h2 id="events-preview-title" class="section-title">
+                        Upcoming Events
+                        <span class="title-badge">New</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Join our upcoming workshops and networking sessions
+                    </p>
+                </div>
+                
+                <div class="events-slider" data-animate="fadeInUp">
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <!-- Event cards will be loaded via JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-prev" aria-label="Previous events">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-next" aria-label="Next events">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="events-cta" data-animate="fadeInUp">
+                    <a href="events.html" class="btn-primary events-btn">
+                        View All Events
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apply Section -->
+        <section id="apply" class="apply-section" aria-labelledby="apply-title">
+            <div class="container">
+                <div class="apply-content" data-animate="fadeInUp">
+                    <div class="apply-text">
+                        <h2 id="apply-title" class="apply-title">
+                            Ready to Start Your PM Journey?
+                        </h2>
+                        <p class="apply-description">
+                            Join our community of 500+ project management enthusiasts. 
+                            Gain practical skills, network with professionals, and accelerate your career.
+                        </p>
+                        <div class="apply-features">
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Free Membership</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>No Prior Experience Needed</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Open to All NSUT Students</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="apply-form" data-animate="fadeInUp" data-delay="0.3">
+                        <form id="membershipForm" class="membership-form" novalidate>
+                            <div class="form-header">
+                                <h3 class="form-title">Apply Now</h3>
+                                <p class="form-subtitle">Limited spots available. Apply today!</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" id="name" name="name" required 
+                                           aria-label="Your full name" placeholder="Full Name">
+                                    <i class="fas fa-user input-icon"></i>
+                                </div>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="email" id="email" name="email" required 
+                                           aria-label="Your email address" placeholder="Email Address">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                </div>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" id="rollno" name="rollno" required 
+                                           aria-label="Your roll number" placeholder="Roll Number">
+                                    <i class="fas fa-id-card input-icon"></i>
+                                </div>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <select id="year" name="year" required aria-label="Select your year">
+                                        <option value="" disabled selected>Select Year</option>
+                                        <option value="1">First Year</option>
+                                        <option value="2">Second Year</option>
+                                        <option value="3">Third Year</option>
+                                        <option value="4">Fourth Year</option>
+                                    </select>
+                                    <i class="fas fa-graduation-cap input-icon"></i>
+                                </div>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="agree" name="agree" required>
+                                    <label for="agree">
+                                        I agree to receive updates about PM Club events and activities
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary submit-btn">
+                                <span class="btn-text">Submit Application</span>
+                                <span class="btn-spinner">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
+                            
+                            <div class="form-footer">
+                                <p class="form-note">
+                                    <i class="fas fa-lock"></i>
+                                    Your information is secure and will only be used for club membership
+                                </p>
+                            </div>
+                        </form>
+                        
+                        <!-- Success Modal -->
+                        <div class="form-success" id="successModal" aria-hidden="true">
+                            <div class="success-content">
+                                <div class="success-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h3 class="success-title">Application Submitted!</h3>
+                                <p class="success-message">
+                                    Thank you for applying to PM Club NSUT. 
+                                    We'll contact you via email within 24 hours.
+                                </p>
+                                <button class="btn-primary success-close">
+                                    Continue Exploring
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: Logo & Description -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <a href="index.html" class="logo" aria-label="PM Club NSUT Home">
+                            <div class="logo-visual">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                                    <text x="20" y="24" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold">PM</text>
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#2563eb"/>
+                                            <stop offset="100%" stop-color="#0d9488"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="logo-text">
+                                <span class="logo-title">PM Club</span>
+                                <span class="logo-subtitle">NSUT</span>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="footer-description">
+                        Empowering future project leaders through education, networking, 
+                        and hands-on experience since 2020.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/pmclubnsut" target="_blank" rel="noopener noreferrer" 
+                           class="social-link" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/pmclubnsut" target="_blank" rel="noopener noreferrer" 
+                           class="social-link" aria-label="Follow us on LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/pmclubnsut" target="_blank" rel="noopener noreferrer" 
+                           class="social-link" aria-label="Follow us on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://discord.gg/pmclubnsut" target="_blank" rel="noopener noreferrer" 
+                           class="social-link" aria-label="Join our Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#apply">Join the Club</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Contact Info -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:contact@pmclubnsut.in" class="contact-value">
+                                    contact@pmclubnsut.in
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Netaji Subhas University of Technology</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <span class="contact-label">Club Hours</span>
+                                <span class="contact-value">Mon - Fri: 9AM - 5PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Column 4: Newsletter -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Stay Updated</h3>
+                    <p class="newsletter-text">
+                        Subscribe to our newsletter for event updates and project management insights.
+                    </p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="input-group">
+                            <input type="email" placeholder="Your email" required 
+                                   aria-label="Email for newsletter subscription">
+                            <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="form-note">
+                            <i class="fas fa-shield-alt"></i>
+                            We respect your privacy. Unsubscribe anytime.
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="currentYear">2024</span> PM Club NSUT. All rights reserved.
+                </div>
+                <div class="footer-links-bottom">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span class="separator">•</span>
+                    <a href="terms.html">Terms of Service</a>
+                    <span class="separator">•</span>
+                    <a href="sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/mobile-menu.js" defer></script>
+</body>
+</html>

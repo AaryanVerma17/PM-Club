@@ -1,0 +1,282 @@
+/* Responsive Design with Mobile-First Approach */
+
+/* Tablet Devices (768px - 1024px) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+    }
+    
+    .hero-title {
+        font-size: 3.25rem;
+    }
+    
+    .about-content {
+        gap: 3rem;
+    }
+}
+
+/* Large Mobile Devices (576px - 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    section {
+        padding: 4rem 0;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    /* Navigation */
+    .nav-menu {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Hero Section */
+    .hero {
+        min-height: auto;
+        padding: 7rem 0 4rem;
+    }
+    
+    .hero-title {
+        font-size: 2.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn-hero {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+    
+    .about-image img {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    
+    /* What We Do Section */
+    .activities-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .activity-item {
+        padding-left: 3rem;
+    }
+    
+    /* CTA Section */
+    .cta {
+        padding: 4rem 1.5rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .btn-cta {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Small Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    h1 {
+        font-size: 2.25rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    /* Hero Section */
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Logo */
+    .logo-text {
+        font-size: 1.25rem;
+    }
+    
+    /* About Section */
+    .about-text h2::after {
+        width: 50px;
+    }
+    
+    /* Activities */
+    .activity-item {
+        padding-left: 2.5rem;
+    }
+    
+    .activity-item::before {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    /* CTA */
+    .cta-title {
+        font-size: 1.75rem;
+    }
+    
+    .cta-text {
+        font-size: 1rem;
+    }
+}
+
+/* Very Small Screens (up to 375px) */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .activity-item {
+        padding-left: 2.25rem;
+    }
+    
+    .activity-item::before {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .hero-buttons,
+    .mobile-menu,
+    .footer {
+        display: none !important;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+        min-height: auto;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        padding: 2rem 0;
+    }
+    
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --white: #0f172a;
+        --dark-gray: #f1f5f9;
+        --medium-gray: #cbd5e1;
+        --light-gray: #1e293b;
+    }
+    
+    .navbar {
+        background: rgba(15, 23, 42, 0.95);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .logo {
+        color: var(--dark-gray);
+    }
+    
+    .nav-link {
+        color: var(--medium-gray);
+    }
+    
+    .what-we-do {
+        background: #1e293b;
+    }
+    
+    .about-image img {
+        filter: brightness(0.9);
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-blue: #0000ff;
+        --accent-teal: #008080;
+    }
+    
+    * {
+        outline: 1px solid transparent !important;
+    }
+}

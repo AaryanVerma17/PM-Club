@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | PM Club NSUT</title>
+    <meta name="description" content="Get in touch with PM Club NSUT - Contact information, FAQs, and inquiry form">
+    <!-- Same head as index.html -->
+</head>
+<body>
+    <!-- Same Navigation -->
+    
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="page-hero contact-hero" aria-labelledby="contact-hero-title">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 id="contact-hero-title" class="page-title" data-animate="textReveal">
+                        Get In <span class="accent">Touch</span>
+                    </h1>
+                    <p class="page-subtitle" data-animate="fadeInUp" data-delay="0.3">
+                        Have questions? Want to collaborate? We'd love to hear from you
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Methods -->
+        <section class="contact-methods" aria-labelledby="methods-title">
+            <div class="container">
+                <h2 id="methods-title" class="visually-hidden">Contact Methods</h2>
+                
+                <div class="methods-grid" data-animate="stagger">
+                    <div class="method-card" data-animate-item>
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="method-title">Email Us</h3>
+                        <p class="method-description">
+                            For general inquiries and membership questions
+                        </p>
+                        <a href="mailto:contact@pmclubnsut.in" class="method-link">
+                            contact@pmclubnsut.in
+                        </a>
+                        <button class="method-action copy-email" data-email="contact@pmclubnsut.in">
+                            Copy Email
+                        </button>
+                    </div>
+                    
+                    <div class="method-card" data-animate-item>
+                        <div class="method-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3 class="method-title">Instagram</h3>
+                        <p class="method-description">
+                            Follow us for updates, stories, and quick responses
+                        </p>
+                        <a href="https://instagram.com/pmclubnsut" target="_blank" class="method-link">
+                            @pmclubnsut
+                        </a>
+                        <button class="method-action open-instagram">
+                            Open Instagram
+                        </button>
+                    </div>
+                    
+                    <div class="method-card" data-animate-item>
+                        <div class="method-icon">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <h3 class="method-title">Discord</h3>
+                        <p class="method-description">
+                            Join our community for discussions and announcements
+                        </p>
+                        <a href="https://discord.gg/pmclubnsut" target="_blank" class="method-link">
+                            Join Discord Server
+                        </a>
+                        <button class="method-action copy-discord" data-invite="pmclubnsut">
+                            Copy Invite
+                        </button>
+                    </div>
+                    
+                    <div class="method-card" data-animate-item>
+                        <div class="method-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="method-title">Location</h3>
+                        <p class="method-description">
+                            Visit our club room at NSUT Campus
+                        </p>
+                        <span class="method-link">
+                            Student Activities Building, Room 205
+                        </span>
+                        <button class="method-action get-directions">
+                            Get Directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form-section" aria-labelledby="form-title">
+            <div class="container">
+                <div class="form-grid">
+                    <div class="form-intro" data-animate="fadeInLeft">
+                        <h2 id="form-title" class="form-title">Send a Message</h2>
+                        <p class="form-description">
+                            Fill out the form and we'll get back to you within 24 hours. 
+                            For urgent matters, please mention in the subject.
+                        </p>
+                        
+                        <div class="form-tips">
+                            <div class="tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Be specific about your inquiry for faster response</span>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-clock"></i>
+                                <span>Response time: 24 hours on weekdays</span>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Students: Include your roll number</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-container" data-animate="fadeInRight">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name">Full Name *</label>
+                                <input type="text" id="contact-name" name="name" required 
+                                       placeholder="Enter your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-email">Email Address *</label>
+                                <input type="email" id="contact-email" name="email" required 
+                                       placeholder="Enter your email">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-subject">Subject *</label>
+                                <select id="contact-subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="membership">Membership Inquiry</option>
+                                    <option value="collaboration">Collaboration</option>
+                                    <option value="event">Event Information</option>
+                                    <option value="sponsorship">Sponsorship</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message">Message *</label>
+                                <textarea id="contact-message" name="message" rows="5" required 
+                                          placeholder="Your message here..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="contact-newsletter" name="newsletter">
+                                    <label for="contact-newsletter">
+                                        Subscribe to our newsletter for updates
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="section-header" data-animate="fadeInUp">
+                    <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Quick answers to common questions</p>
+                </div>
+                
+                <div class="faq-container" data-animate="stagger">
+                    <div class="faq-item" data-animate-item>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How do I join PM Club?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Click the "Apply Now" button on any page, fill out the form, 
+                               and we'll contact you within 24 hours with next steps.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-animate-item>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Are there any membership fees?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, membership is completely free for all NSUT students.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- More FAQ items -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Same Footer -->
+    
+    <!-- Scripts -->
+    <script>
+        window.addEventListener('load', () => {
+            document.dispatchEvent(new CustomEvent('pageLoaded', {
+                detail: { page: 'contact' }
+            }));
+        });
+    </script>
+</body>
+</html>

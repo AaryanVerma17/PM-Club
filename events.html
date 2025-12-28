@@ -5,10 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events | PM Club NSUT</title>
     <meta name="description" content="Upcoming workshops, networking events, and competitions from PM Club NSUT">
-    <!-- Same head as index.html -->
+    <!-- Performance & SEO -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Inline Critical CSS -->
+    <style>
+        /* Critical above-the-fold styles */
+        .navbar { 
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.3s forwards;
+        }
+        @keyframes fadeIn { to { opacity: 1; } }
+        
+        .hero { 
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Reduce layout shift */
+        img { aspect-ratio: attr(width) / attr(height); }
+        .activity-item::before { content: ''; }
+        
+        /* Loading state */
+        body:not(.loaded) .lazy-load { opacity: 0; transform: translateY(20px); }
+        body.loaded .lazy-load { 
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+    </style>
+    
+    <!-- Main Styles (Loaded non-blocking) -->
+    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="PM Club NSUT | Project Management Society">
+    <meta property="og:description" content="Empowering future project leaders through hands-on experience">
+    <meta property="og:image" content="https://pmclubnsut.in/images/og-image.jpg">
+    <meta property="og:url" content="https://pmclubnsut.in">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PM Club NSUT">
+    <meta name="twitter:description" content="Project Management Society of NSUT">
 </head>
 <body>
-    <!-- Same Navigation -->
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="index.html" class="logo" aria-label="PM Club NSUT Home">
+                    <div class="logo-visual">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                            <text x="20" y="24" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold">PM</text>
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2563eb"/>
+                                    <stop offset="100%" stop-color="#0d9488"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">PM Club</span>
+                        <span class="logo-subtitle">NSUT</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-menu" role="menu">
+                    <a href="index.html" class="nav-link active" role="menuitem" aria-current="page">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="about.html" class="nav-link" role="menuitem">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                    <a href="events.html" class="nav-link" role="menuitem">
+                        <i class="fas fa-calendar-alt"></i> Events
+                    </a>
+                    <a href="contact.html" class="nav-link" role="menuitem">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                    <a href="#apply" class="btn-primary nav-btn apply-now" 
+                       role="button" aria-label="Apply to join PM Club">
+                        Apply Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+                <div class="mobile-menu-container">
+                    <a href="index.html" class="mobile-link active" aria-current="page">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="about.html" class="mobile-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                    <a href="events.html" class="mobile-link">
+                        <i class="fas fa-calendar-alt"></i> Events
+                    </a>
+                    <a href="contact.html" class="mobile-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                    <a href="#apply" class="btn-primary mobile-btn apply-now" role="button">
+                        Apply Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
     
     <main id="main-content">
         <!-- Hero -->
